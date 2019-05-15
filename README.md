@@ -80,12 +80,20 @@ MyanmarPhoneNumberUtils.getNetworkType("0973123456") //CDMA 800Hz
 
 ### Usage
 
-*TBA*
+If you use gradle, include
+
+```
+repositories {
+    jcenter()
+}
+
+implementation 'com.aungkyawpaing.mmphonenumber:mmphonenumber:1.0.0'
+```
 
 ### Credit
 
-[myanmar-phonenumber.js](https://github.com/kaungmyatlwin/myanmar-phonenumber)
-[Kaung Myat Lwin](https://github.com/kaungmyatlwin) for giving me some pointers in porting
+- [myanmar-phonenumber.js](https://github.com/kaungmyatlwin/myanmar-phonenumber)
+- [Kaung Myat Lwin](https://github.com/kaungmyatlwin) for giving me some pointers in porting	
 
 ### License
 ```
