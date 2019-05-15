@@ -2,7 +2,7 @@ Kotlin port of [myanmar-phonenumber](https://github.com/kaungmyatlwin/myanmar-ph
 
 ### Features
 
-####Phone Number Normalization
+#### Phone Number Normalization
 
 An extensible normalizier allows you to normalize the phone number into a standardized format you want. The default out of the box provides
 
@@ -17,7 +17,7 @@ val result = normalizer.normalize(input)
 print(result) //: 09784123456
 ```
 
-#####Custom Rules
+##### Custom Rules
 
 You can also use the builder provided to add custom rules. This allows you to create your own standardized format such as using "+959" as standard instead of "09", or converting other languages to English numerals etc.
 
@@ -44,7 +44,7 @@ val output = builder.build().normalize(input)
 print(output) //+959784123456
 ```
 
-####Phone number Validaiton
+#### Phone number Validaiton
 
 Check whether a phone number is a valid Myanmar phone number 
 
@@ -53,7 +53,7 @@ MyanmarPhoneNumberUtils.isValidMyanmarPhoneNumber("09978412345") //true
 MyanmarPhoneNumberUtils.isValidMyanmarPhoneNumber("14155552671") //false
 ```
 
-####Opreator Checking
+#### Opreator Checking
 
 Check which opreator the number is from
 
@@ -64,7 +64,7 @@ MyanmarPhoneNumberUtils.getTelecomOperator("09420012345") //MPT
 MyanmarPhoneNumberUtils.getTelecomOperator("09690000966") //MyTel
 ```
 
-####Network Type Checking
+#### Network Type Checking
 
 Check which network the numer belongs to 
 
