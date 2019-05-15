@@ -15,8 +15,8 @@ jobs:
       script: ./gradlew assemble
     - stage: test
       script: ./gradlew test
-#    - stage: deploy
-#      script: ./gradlew bintrayUpload
+    - stage: deploy
+      script: ./gradlew bintrayUpload
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock

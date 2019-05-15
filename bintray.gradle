@@ -1,0 +1,67 @@
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+apply plugin: 'java'
+
+def artifactGroup = 'com.aungkyawpaing.mmphonenumber'
+def buildVersion = '1.0.0'
+def artifactName = 'mmphonenumber'
+
+
+bintray {
+  user = System.getenv('BINTRAY_USER')
+  key = System.getenv('BINTRAY_API_KEY')
+  publications = ['MyPublication']
+  configurations = ['archives']
+  publish = true
+  override = true
+  pkg {
+    repo = 'maven'
+    name = 'mmphonenumber'
+    licenses = ['Apache-2.0']
+    vcsUrl = 'https://github.com/vincent-paing/myanmar-phonenumber-kt.git'
+    version {
+      name = '1.0.0'
+    }
+  }
+}
+
+// Create the pom configuration:
+def pomConfig = {
+  licenses {
+    license {
+      name "Apache License 2.0"
+      url "https://www.apache.org/licenses/LICENSE-2.0.txt"
+    }
+  }
+  developers {
+    developer {
+      id "aungkyawpaing"
+      name "aungkyawpaing"
+      email "dev@aungkyawpaing.com"
+    }
+  }
+
+  scm {
+    url "https://github.com/vincent-paing/myanmar-phonenumber-kt"
+  }
+}
+
+publishing {
+  publications {
+    MyPublication(MavenPublication) {
+      from components.java
+      artifact sourcesJar
+      artifact javadocJar
+      groupId "$artifactGroup"
+      artifactId "$artifactId"
+      version '1.0.1'
+      pom.withXml {
+        def root = asNode()
+        root.appendNode('description', 'Port of myanmar-phonenumber(https://github.com/kaungmyatlwin/myanmar-phonenumber) written in Kotlin to check valid myanmar mobile numbers, get mobile operator\'s name, sanitize mobile numbers and get mobile network types.')
+        root.appendNode('name', 'mmphonenumber')
+        root.appendNode('url', 'https://github.com/vincent-paing/myanmar-phonenumber-kt')
+        root.children().last() + pomConfig
+      }
+    }
+  }
+}
