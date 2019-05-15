@@ -37,7 +37,7 @@ def pomConfig = {
     developer {
       id "aungkyawpaing"
       name "aungkyawpaing"
-      email "dev@aungkyawpaing.com"
+      email "dev.aungkyawpaing@gmail.com"
     }
   }
 
@@ -54,10 +54,10 @@ publishing {
       artifact javadocJar
       groupId "$artifactGroup"
       artifactId "$artifactId"
-      version '1.0.1'
+      version '1.0.0'
       pom.withXml {
         def root = asNode()
-        root.appendNode('description', 'Port of myanmar-phonenumber(https://github.com/kaungmyatlwin/myanmar-phonenumber) written in Kotlin to check valid myanmar mobile numbers, get mobile operator\'s name, sanitize mobile numbers and get mobile network types.')
+        root.appendNode('description', 'Port of myanmar-phonenumber written in Kotlin to check valid myanmar mobile numbers, get mobile operator name, sanitize mobile numbers and get mobile network types.')
         root.appendNode('name', 'mmphonenumber')
         root.appendNode('url', 'https://github.com/vincent-paing/myanmar-phonenumber-kt')
         root.children().last() + pomConfig

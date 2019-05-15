@@ -1,3 +1,6 @@
+[ ![Download](https://api.bintray.com/packages/vincent-paing/maven/mmphonenumber/images/download.svg) ](https://bintray.com/vincent-paing/maven/mmphonenumber/_latestVersion)
+[![Build Status](https://travis-ci.com/vincent-paing/myanmar-phonenumber-kt.svg?branch=master)](https://travis-ci.com/vincent-paing/myanmar-phonenumber-kt)
+
 Kotlin port of [myanmar-phonenumber](https://github.com/kaungmyatlwin/myanmar-phonenumber) to check valid myanmar mobile numbers, get mobile operator's name, sanitize mobile numbers and get mobile network types.
 
 ### Features
