@@ -5,7 +5,7 @@ import com.aungkyawpaing.mmphonenumber.rule.SanitizeRule
 import com.aungkyawpaing.mmphonenumber.rule.ZeroNineRule
 
 
-class MyanmarPhoneNumebrNormalizer(
+class MyanmarPhoneNumberNormalizer(
   private val ruleList: List<Rule> = listOf(
     SanitizeRule(),
     EnglishNumberRule(),
@@ -21,8 +21,8 @@ class MyanmarPhoneNumebrNormalizer(
       ruleList.add(rule)
     }
 
-    fun build(): MyanmarPhoneNumebrNormalizer {
-      return MyanmarPhoneNumebrNormalizer(ruleList.toList())
+    fun build(): MyanmarPhoneNumberNormalizer {
+      return MyanmarPhoneNumberNormalizer(ruleList.toList())
     }
 
   }

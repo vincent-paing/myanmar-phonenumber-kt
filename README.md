@@ -15,14 +15,14 @@ An extensible normalizier allows you to normalize the phone number into a standa
 
 ```kotlin
 val input = "+၉၅၉၇၈၄၁၂၃၄၅၆"
-val normalizer = MyanmarPhoneNumebrNormalizer()
+val normalizer = MyanmarPhoneNumberNormalizer()
 val result = normalizer.normalize(input)
 print(result) //: 09784123456
 ```
 
 ##### Custom Rules
 
-You can also use the builder provided to add custom rules. This allows you to create your own standardized format such as using "+959" as standard instead of "09", or converting other languages to English numerals etc.
+You can also use the builder provided to add custom rules. This allows you to create your own standardized format such as using "+959" instead of "09", or converting other languages to English numerals etc.
 
 ```kotlin
 class NineFiveNineRule : Rule {
@@ -37,7 +37,7 @@ class NineFiveNineRule : Rule {
   
 }
 
-val builder = MyanmarPhoneNumebrNormalizer.Builder()
+val builder = MyanmarPhoneNumberNormalizer.Builder()
 builder.addRule(NineFiveNineRule())
 
 val input = "09784123456"
@@ -87,7 +87,7 @@ repositories {
     jcenter()
 }
 
-implementation 'com.aungkyawpaing.mmphonenumber:mmphonenumber:1.0.0'
+implementation 'com.aungkyawpaing.mmphonenumber:mmphonenumber:1.0.1'
 ```
 
 ### Credit

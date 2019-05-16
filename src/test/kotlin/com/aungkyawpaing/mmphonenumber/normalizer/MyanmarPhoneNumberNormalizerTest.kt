@@ -6,11 +6,11 @@ import org.junit.Test
 
 class MyanmarPhoneNumberNormalizerTest {
 
-  val normalizer = MyanmarPhoneNumebrNormalizer()
+  val normalizer = MyanmarPhoneNumberNormalizer()
 
   @Test
   fun testCustomRule() {
-    val builder = MyanmarPhoneNumebrNormalizer.Builder()
+    val builder = MyanmarPhoneNumberNormalizer.Builder()
 
     builder.addRule(object : Rule {
       override fun convert(input: String): String {
