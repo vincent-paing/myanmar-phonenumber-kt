@@ -7,7 +7,7 @@ class ValidPhoneNumberTest {
 
   @Test
   fun testValidNumber() {
-    val input = "09978412345"
+    val input = "09767123456"
 
     val expected = true
 
@@ -18,7 +18,7 @@ class ValidPhoneNumberTest {
 
   @Test
   fun testNineFiveNine() {
-    val input = "+95978412345"
+    val input = "+959767123456"
 
     val expected = true
 
