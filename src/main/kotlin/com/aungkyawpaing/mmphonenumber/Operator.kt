@@ -4,7 +4,7 @@ enum class Operator(val operatorName: String, val regex: Regex) {
 
   OOREDOO("Ooredoo", Regex("^(09|\\+?959)9(5|7|6)\\d{7}\$")),
 
-  TELENOR("Telenor", Regex("^(09|\\+?959)7(9|8|7)\\d{7}\$")),
+  TELENOR("Telenor", Regex("^(09|\\+?959)7(9|8|7|6|5)\\d{7}\$")),
 
   MPT(
     "Myanmar Posts and Telecommunications",

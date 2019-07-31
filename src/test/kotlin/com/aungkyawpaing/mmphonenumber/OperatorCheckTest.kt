@@ -29,7 +29,7 @@ class OperatorCheckTest {
 
   @Test
   fun testTelenorNumber() {
-    val input = "09784123456"
+    val input = "09754123456"
 
     val expected = Operator.TELENOR
 
