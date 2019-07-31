@@ -83,6 +83,17 @@ class OperatorCheckTest {
   }
 
   @Test
+  fun testMecTelNumber() {
+    val input = "0939454234"
+
+    val expected = Operator.MECTEL
+
+    val actual = MyanmarPhoneNumberUtils.getTelecomOperator(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
   fun testMyTelNumberWithCountryCode() {
     val input = "+959690000966"
 
