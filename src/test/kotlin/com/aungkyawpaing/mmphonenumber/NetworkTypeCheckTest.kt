@@ -19,7 +19,7 @@ class NetworkTypeCheckTest {
 
   @Test
   fun testTelenorNumberGSM() {
-    val input = "09784123456"
+    val input = "09767123456"
 
     val expected = NetworkType.GSM
 
