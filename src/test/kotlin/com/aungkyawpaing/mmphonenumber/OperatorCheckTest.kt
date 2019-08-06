@@ -29,7 +29,7 @@ class OperatorCheckTest {
 
   @Test
   fun testTelenorNumber() {
-    val input = "09767123456"
+    val input = "09754123456"
 
     val expected = Operator.TELENOR
 
@@ -65,6 +65,28 @@ class OperatorCheckTest {
     val input = "+959420012345"
 
     val expected = Operator.MPT
+
+    val actual = MyanmarPhoneNumberUtils.getTelecomOperator(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testMecTelNumber() {
+    val input = "0939454234"
+
+    val expected = Operator.MECTEL
+
+    val actual = MyanmarPhoneNumberUtils.getTelecomOperator(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testMecTelNumberWithCountryCode() {
+    val input = "+959354542314"
+
+    val expected = Operator.MECTEL
 
     val actual = MyanmarPhoneNumberUtils.getTelecomOperator(input)
 
