@@ -3,7 +3,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'java'
 
 def artifactGroup = 'com.aungkyawpaing.mmphonenumber'
-def buildVersion = '1.0.1'
+def buildVersion = '1.0.2'
 def artifactName = 'mmphonenumber'
 
 
@@ -20,7 +20,7 @@ bintray {
     licenses = ['Apache-2.0']
     vcsUrl = 'https://github.com/vincent-paing/myanmar-phonenumber-kt.git'
     version {
-      name = '1.0.1'
+      name = '1.0.2'
     }
   }
 }
@@ -54,7 +54,7 @@ publishing {
       artifact javadocJar
       groupId "$artifactGroup"
       artifactId "$artifactId"
-      version '1.0.1'
+      version '1.0.2'
       pom.withXml {
         def root = asNode()
         root.appendNode('description', 'Port of myanmar-phonenumber written in Kotlin to check valid myanmar mobile numbers, get mobile operator name, sanitize mobile numbers and get mobile network types.')

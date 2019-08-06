@@ -87,7 +87,7 @@ repositories {
     jcenter()
 }
 
-implementation 'com.aungkyawpaing.mmphonenumber:mmphonenumber:1.0.1'
+implementation 'com.aungkyawpaing.mmphonenumber:mmphonenumber:1.0.2'
 ```
 
 ### Credit
