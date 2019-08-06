@@ -40,7 +40,7 @@ class OperatorCheckTest {
 
   @Test
   fun testTelenorNumberWithCountryCode() {
-    val input = "+959784123456"
+    val input = "+959767123456"
 
     val expected = Operator.TELENOR
 
