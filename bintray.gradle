@@ -37,4 +37,4 @@ bintray {
     }
 }
 
-apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
+apply from: 'https://raw.githubusercontent.com/vincent-paing/gradle-maven-plugin/master/gradle-mavenizer.gradle'
