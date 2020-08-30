@@ -1,7 +1,7 @@
 object BuildConfig {
     private const val versionMajor = 1
-    private const val versionMinor = 0
-    private const val versionPatch = 2
+    private const val versionMinor = 1
+    private const val versionPatch = 0
     private const val versionBuild = 0
 
     const val group = "com.aungkyawpaing.mmphonenumber"
