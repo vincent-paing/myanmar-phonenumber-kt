@@ -2,66 +2,39 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 apply plugin: 'java'
 
-def artifactGroup = 'com.aungkyawpaing.mmphonenumber'
-def buildVersion = '1.0.2'
-def artifactName = 'mmphonenumber'
+Properties properties = new Properties()
+if (project.rootProject.file("local.properties").exists()) {
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+}
+
+project.ext {
+    mavDevelopers = [(properties.getProperty("bintrayUser")): "Aung Kyaw Paing"]
+    mavSiteUrl = "https://github.com/vincent-paing/myanmar-phonenumber-kt"
+    mavGitUrl = mavSiteUrl + '.git'
+    mavProjectName = BuildConfig.artifactName
+    bugTrackerUrl = mavSiteUrl + '/issues/'
+    mavLibraryLicenses = ["Apache-2.0": "http://www.apache.org/licenses/LICENSE-2.0.txt"]
+    mavLibraryDescription = BuildConfig.description
+    mavVersion = BuildConfig.versionName
+}
 
 
 bintray {
-  user = System.getenv('BINTRAY_USER')
-  key = System.getenv('BINTRAY_API_KEY')
-  publications = ['MyPublication']
-  configurations = ['archives']
-  publish = true
-  override = true
-  pkg {
-    repo = 'maven'
-    name = 'mmphonenumber'
-    licenses = ['Apache-2.0']
-    vcsUrl = 'https://github.com/vincent-paing/myanmar-phonenumber-kt.git'
-    version {
-      name = '1.0.2'
+    user = properties.getProperty("bintrayUser")
+    key = properties.getProperty("bintrayKey")
+    publications = ['mavenPublish']
+    override = true
+    pkg {
+        repo = "maven"
+        name = BuildConfig.artifactName
+        desc = BuildConfig.description
+        websiteUrl = mavSiteUrl
+        vcsUrl = mavGitUrl
+        issueTrackerUrl = bugTrackerUrl
+        licenses = ["Apache-2.0"]
+        publicDownloadNumbers = true
+        publish = true
     }
-  }
 }
 
-// Create the pom configuration:
-def pomConfig = {
-  licenses {
-    license {
-      name "Apache License 2.0"
-      url "https://www.apache.org/licenses/LICENSE-2.0.txt"
-    }
-  }
-  developers {
-    developer {
-      id "aungkyawpaing"
-      name "aungkyawpaing"
-      email "dev.aungkyawpaing@gmail.com"
-    }
-  }
-
-  scm {
-    url "https://github.com/vincent-paing/myanmar-phonenumber-kt"
-  }
-}
-
-publishing {
-  publications {
-    MyPublication(MavenPublication) {
-      from components.java
-      artifact sourcesJar
-      artifact javadocJar
-      groupId "$artifactGroup"
-      artifactId "$artifactId"
-      version '1.0.2'
-      pom.withXml {
-        def root = asNode()
-        root.appendNode('description', 'Port of myanmar-phonenumber written in Kotlin to check valid myanmar mobile numbers, get mobile operator name, sanitize mobile numbers and get mobile network types.')
-        root.appendNode('name', 'mmphonenumber')
-        root.appendNode('url', 'https://github.com/vincent-paing/myanmar-phonenumber-kt')
-        root.children().last() + pomConfig
-      }
-    }
-  }
-}
+apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
