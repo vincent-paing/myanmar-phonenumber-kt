@@ -78,6 +78,16 @@ MyanmarPhoneNumberUtils.getNetworkType("096355555") //CDMA 450Hz
 MyanmarPhoneNumberUtils.getNetworkType("0973123456") //CDMA 800Hz
 ```
 
+#### Phone Number Extraction
+
+Extract the list of burmese phone numbers within an input. **This is experimental features, so feel free to report bugs if you use it!**
+
+```kotlin
+val extractor = MyanmarPhoneNumberExtractor()
+val input = "၀၉၁၂၃၄၅၆၇ (မောင်မောင်)၊ ၀၉၁၂၃၄၅၆၆ (အောင်အောင်)"
+val result = extractor.extract(input) //[091234567, 091234566]
+```
+
 ### Usage
 
 If you use gradle, include
@@ -87,7 +97,7 @@ repositories {
     jcenter()
 }
 
-implementation 'com.aungkyawpaing.mmphonenumber:mmphonenumber:1.0.2'
+implementation 'com.aungkyawpaing.mmphonenumber:mmphonenumber:1.1.0'
 ```
 
 ### Credit

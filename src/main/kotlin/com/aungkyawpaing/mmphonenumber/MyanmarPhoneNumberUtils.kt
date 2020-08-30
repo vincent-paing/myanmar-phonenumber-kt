@@ -32,7 +32,6 @@ object MyanmarPhoneNumberUtils {
     }
 
     return Operator.UNKNOWN
-
   }
 
 
