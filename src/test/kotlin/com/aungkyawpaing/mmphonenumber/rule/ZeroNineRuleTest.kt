@@ -4,8 +4,7 @@ import com.aungkyawpaing.mmphonenumber.rule.ZeroNineRule
 import org.junit.Assert
 import org.junit.Test
 
-
-class ZeroNineRuleTest {
+public class ZeroNineRuleTest {
 
   val zeroNineRule = ZeroNineRule()
 
@@ -75,6 +74,18 @@ class ZeroNineRuleTest {
     val input = "959784959456"
 
     val expected = "09784959456"
+
+    val actual = zeroNineRule.convert(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testNineFiveNineInMiddle() {
+
+    val input = "09428195994"
+
+    val expected = "09428195994"
 
     val actual = zeroNineRule.convert(input)
 

@@ -8,12 +8,15 @@ import com.aungkyawpaing.mmphonenumber.normalizer.Rule
  */
 class ZeroNineRule : Rule {
 
-  private val possibleCases = Regex("(09-)|(\\+959)|(09\\s)|(959)|(09\\.)")
+  private val possibleCases = Regex("^((09-)|(\\+959)|(09\\s)|(959)|(09\\.))\\d{7,9}\$")
 
   override fun convert(input: String): String {
 
-    if (possibleCases.containsMatchIn(input)) {
-      return input.replaceFirst(possibleCases, "09")
+    val matchResult = possibleCases.matchEntire(input)
+    val prefixGroupValue = matchResult?.groupValues?.getOrNull(1)
+
+    if (prefixGroupValue != null) {
+      return input.replaceFirst(prefixGroupValue, "09")
     }
 
     return input

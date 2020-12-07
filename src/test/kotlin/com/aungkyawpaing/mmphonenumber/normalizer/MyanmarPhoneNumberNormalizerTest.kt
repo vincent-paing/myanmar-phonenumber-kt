@@ -143,4 +143,15 @@ class MyanmarPhoneNumberNormalizerTest {
 
     Assert.assertEquals(expected, actual)
   }
+
+  @Test
+  fun test95InMiddle() {
+    val input = "09428195994"
+
+    val expected = "09428195994"
+
+    val actual = normalizer.normalize(input)
+
+    Assert.assertEquals(expected, actual)
+  }
 }
