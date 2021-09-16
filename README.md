@@ -94,11 +94,13 @@ If you use gradle, include
 
 ```
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
-implementation 'com.aungkyawpaing.mmphonenumber:mmphonenumber:1.1.0'
+implementation 'dev.aungkyawpaing.mmphonenumber:mmphonenumber:1.1.1'
 ```
+
+**VERSION LOWER THAN 1.1.1 IS PUBLISHED ON JCENTER**
 
 ### Credit
 
