@@ -1,16 +1,30 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
+  }
+}
+
 plugins {
   id 'java'
-  id 'org.jetbrains.kotlin.jvm' version '1.4.0'
-  id "com.jfrog.bintray" version "1.8.4"
+  id "org.jetbrains.kotlin.jvm" version "1.5.30"
+  id("org.jetbrains.dokka") version "1.5.30"
 }
-apply from: 'bintray.gradle'
 
-group BuildConfig.group
-version BuildConfig.versionName
+apply plugin: 'com.vanniktech.maven.publish'
 
 repositories {
   mavenCentral()
-  jcenter()
+}
+
+allprojects {
+  plugins.withId("com.vanniktech.maven.publish") {
+    mavenPublish {
+      sonatypeHost = "S01"
+    }
+  }
 }
 
 dependencies {
